@@ -1,0 +1,17 @@
+.uiProgress {
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: hsl(var(--muted) / 0.9);
+  overflow: hidden;
+  border: 1px solid hsl(var(--border) / 0.9);
+}
+
+.uiProgress__bar {
+  height: 100%;
+  width: 0%;
+  background: hsl(var(--primary));
+  border-radius: 999px;
+  transition: width 240ms ease;
+}
+

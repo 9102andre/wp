@@ -1,0 +1,29 @@
+.uiTextarea {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  padding: 0.75rem 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  resize: vertical;
+  min-height: 80px;
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.uiTextarea::placeholder {
+  color: hsl(var(--muted-foreground) / 0.95);
+}
+
+.uiTextarea:focus {
+  outline: none;
+  border-color: hsl(var(--primary) / 0.6);
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.25);
+}
+
+.uiTextarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
