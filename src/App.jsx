@@ -7,6 +7,8 @@ import NotFound from "@/pages/NotFound.jsx";
 import RoleLogin from "@/pages/RoleLogin.jsx";
 import AuthCallback from "@/pages/AuthCallback.jsx";
 
+import { ToastProvider } from "@/context/toast.jsx";
+
 const queryClient = new QueryClient();
 
 export default function App() {
@@ -14,17 +16,19 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <AccessibilityProvider>
         <AuthProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route
-                path="/login/:roleId"
-                element={<RoleLogin />}
-              />
-              <Route path="/auth/callback" element={<AuthCallback />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
+          <ToastProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route
+                  path="/login/:roleId"
+                  element={<RoleLogin />}
+                />
+                <Route path="/auth/callback" element={<AuthCallback />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </ToastProvider>
         </AuthProvider>
       </AccessibilityProvider>
     </QueryClientProvider>

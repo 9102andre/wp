@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../Andri-Mrini-WP-main"
 		}
 	],
 	"settings": {}
